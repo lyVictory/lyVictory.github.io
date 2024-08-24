@@ -17,11 +17,11 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Jmeter分布式压测环境搭建 | 写bug的大耳朵图图</title>
+  <title>Jmeter分布式压测环境搭建 | Hexo</title>
   <meta name="description" content="这是我的第一个博客Hello">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jmeter分布式压测环境搭建">
-<meta property="og:url" content="https://lyvictory.github.io/project/2024/08/24/Jmeter%E5%88%86%E5%B8%83%E5%BC%8F%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:url" content="https://lyvictory.github.io/2024/08/24/Jmeter%E5%88%86%E5%B8%83%E5%BC%8F%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="努力的羊羊🐑">
 <meta property="og:description" content="这是我的第一个博客Hello">
 <meta property="og:locale" content="en_US">
@@ -30,7 +30,7 @@
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://lyvictory.github.io/project/2024/08/24/Jmeter%E5%88%86%E5%B8%83%E5%BC%8F%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
+  <link rel="canonical" href="https://lyvictory.github.io/2024/08/24/Jmeter%E5%88%86%E5%B8%83%E5%BC%8F%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
   
     <link rel="alternate" href="/atom.xml" title="努力的羊羊🐑" type="application/atom+xml">
   
@@ -38,42 +38,53 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon">
   
   
-<link rel="stylesheet" href="/project/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
   
   
-  
-    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
   
   
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 
-<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
   <header class="header" itemscope itemtype="http://schema.org/WPHeader">
   <div class="slimContent">
     <div class="navbar-header">
       
       
       <div class="profile-block text-center">
-        <a id="avatar" href="https://gitee.com/linvaux" target="_blank">
-          <img class="img-circle img-rotate" src="/project/images/avatar.jpg" width="200" height="200">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
         </a>
-        <h2 id="name" class="hidden-xs hidden-sm">大耳朵图图</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Java开发/高级测试开发</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 中国·南京</small>
+        <h2 id="name" class="hidden-xs hidden-sm">昵称</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shenzhen, China</small>
       </div>
       
       <div class="search" id="search-form-wrap">
 
-    <form class="search-form sidebar-form" method="GET" action="https://www.baidu.com/s?">
-	<div class="input-group">
-    	<input name="wd" type="text" class="form-control search-form-input" placeholder="Search" />
-	    <span class="input-group-btn">
-	    	<button type="submit" class=" btn btn-flat search-form-submit"><i class="icon icon-search"></i></button>
-	    </span>
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
     </div>
-</form>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
 
 </div>
       <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
@@ -84,11 +95,11 @@
       </button>
     </div>
     <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-      <ul class="nav navbar-nav main-nav menu-highlight">
+      <ul class="nav navbar-nav main-nav ">
         
         
         <li class="menu-item menu-item-home">
-          <a href="/project/.">
+          <a href="/.">
             
             <i class="icon icon-home-fill"></i>
             
@@ -98,7 +109,7 @@
         
         
         <li class="menu-item menu-item-archives">
-          <a href="/project/archives">
+          <a href="/archives">
             
             <i class="icon icon-archives-fill"></i>
             
@@ -107,8 +118,58 @@
         </li>
         
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
         <li class="menu-item menu-item-about">
-          <a href="/project/about">
+          <a href="/about">
             
             <i class="icon icon-cup-fill"></i>
             
@@ -121,9 +182,15 @@
 	
     <ul class="social-links">
     	
-        <li><a href="https://gitee.com/linvaux" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
         
-        <li><a href="/project/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -140,11 +207,17 @@
     <div class="widget-body">
         <div id="board">
             <div class="content">
-                <h5>原博客地址：<a href = "https://geeknote.net/wick">https://geeknote.net/wick</a></h5>
+                <p>欢迎交流与分享经验!</p>
             </div>
         </div>
     </div>
 </div>
+
+    
+      
+
+    
+      
 
     
       
@@ -153,7 +226,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2024/08/">August 2024</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -172,7 +245,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/project/2024/08/24/ts/" class="title">ts</a>
+                <a href="/2024/08/24/ts/" class="title">ts</a>
               </p>
               <p class="item-date">
                 <time datetime="2024-08-24T07:55:49.000Z" itemprop="datePublished">2024-08-24</time>
@@ -187,7 +260,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/project/2024/08/24/Jmeter%E5%88%86%E5%B8%83%E5%BC%8F%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="title">Jmeter分布式压测环境搭建</a>
+                <a href="/2024/08/24/Jmeter%E5%88%86%E5%B8%83%E5%BC%8F%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="title">Jmeter分布式压测环境搭建</a>
               </p>
               <p class="item-date">
                 <time datetime="2024-08-24T07:02:15.000Z" itemprop="datePublished">2024-08-24</time>
@@ -223,7 +296,7 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/project/2024/08/24/Jmeter%E5%88%86%E5%B8%83%E5%BC%8F%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="article-date">
+	<a href="/2024/08/24/Jmeter%E5%88%86%E5%B8%83%E5%BC%8F%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="article-date">
 	  <time datetime="2024-08-24T07:02:15.000Z" itemprop="datePublished">2024-08-24</time>
 	</a>
 </span>
@@ -231,15 +304,8 @@
         
 
         
-	<span class="article-read hidden-xs">
-	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
-	    <span id="busuanzi_container_page_pv">
-			<span id="busuanzi_value_page_pv">0</span>
-		</span>
-	</span>
 
-
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/project/2024/08/24/Jmeter%E5%88%86%E5%B8%83%E5%BC%8F%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2024/08/24/Jmeter%E5%88%86%E5%B8%83%E5%BC%8F%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
@@ -254,7 +320,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://lyvictory.github.io/project/2024/08/24/Jmeter%E5%88%86%E5%B8%83%E5%BC%8F%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Jmeter分布式压测环境搭建" target="_blank" rel="external">https://lyvictory.github.io/project/2024/08/24/Jmeter分布式压测环境搭建/</a>
+      <a href="https://lyvictory.github.io/2024/08/24/Jmeter%E5%88%86%E5%B8%83%E5%BC%8F%E5%8E%8B%E6%B5%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Jmeter分布式压测环境搭建" target="_blank" rel="external">https://lyvictory.github.io/2024/08/24/Jmeter分布式压测环境搭建/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -268,13 +334,13 @@
   <div class="panel-body">
     <figure class="media">
       <div class="media-left">
-        <a href="https://gitee.com/linvaux" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/project/images/avatar.jpg" class="img-rounded w-full" alt="">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
-        <h3 class="media-heading"><a href="https://gitee.com/linvaux" target="_blank"><span class="text-dark">大耳朵图图</span><small class="ml-1x">Java开发/高级测试开发</small></a></h3>
-        <div>一个持续学习的靓仔</div>
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">昵称</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div>个人简介。</div>
       </div>
     </figure>
   </div>
@@ -287,6 +353,8 @@
     
   <section id="comments">
   	
+      <div id="vcomments"></div>
+    
   </section>
 
 
@@ -299,7 +367,7 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/project/2024/08/24/ts/" title="ts"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2024/08/24/ts/" title="ts"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
@@ -307,13 +375,63 @@
   </ul>
   
   
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
   
   <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
     
   </div>
   </div>
 </nav>
   
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 </main>
@@ -323,9 +441,15 @@
 	
     <ul class="social-links">
     	
-        <li><a href="https://gitee.com/linvaux" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
         
-        <li><a href="/project/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -341,28 +465,31 @@
 window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
 
-<script src="/project/js/plugin.min.js"></script>
+<script src="/js/plugin.min.js"></script>
 
 
-<script src="/project/js/application.js"></script>
-
+<script src="/js/application.js"></script>
 
 
     <script>
-(function ($) {
-    $('.search-form').on('submit', function (e) {
-        var keyword = $('.search-form-input[name="wd"]').val();
-        window.location = 'https://www.baidu.com/s?wd=site:lyvictory.github.io/project ' + keyword;
-        return false;
-    });
-})(jQuery);
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
 </script>
 
+<script src="/js/insight.js"></script>
 
-
-
-   
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
@@ -371,34 +498,35 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
    
 
 
-  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
-  <script>
-  //利用 FancyBox 实现点击图片放大
-  $(document).ready(function() {
-    $('article img').not('[hidden]').not('.panel-body img').each(function() {
-      var $image = $(this);
-      var imageCaption = $image.attr('alt');
-      var $imageWrapLink = $image.parent('a');
-      if ($imageWrapLink.length < 1) {
-        var src = this.getAttribute('src');
-        var idx = src.lastIndexOf('?');
-        if (idx != -1) {
-          src = src.substring(0, idx);
-        }
-        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
-      }
-      $imageWrapLink.attr('data-fancybox', 'images');
-      if (imageCaption) {
-        $imageWrapLink.attr('data-caption', imageCaption);
-      }
-    });
-    $().fancybox({
-      selector: '[data-fancybox="images"]',
-      hash: false,
-      loop: false,
-    });
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
   });
   </script>
+
+     
+
+
 
 
 
